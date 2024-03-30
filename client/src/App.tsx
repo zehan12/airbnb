@@ -1,9 +1,11 @@
 import { Fragment } from "react/jsx-runtime";
 import { Button } from "./components/ui/button";
+import Header from "./layouts/Header/header";
 
 const App = () => {
   return (
     <Fragment>
+      <Header />
       <main className="container mx-auto mt-28 px-5 flex flex-col">
         <h1 className="text-4xl">Airbnb</h1>
         <p className="w-80 p-4">
