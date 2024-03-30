@@ -1,4 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
+import { Button } from "./components/ui/button";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
           RENT OUT THEIR PROPERTY WITH PEOPLE WHO ARE LOOKING FOR |
           ACCOMMODATIONS, TYPICALLY FOR SHORT STAYS
         </p>
+        <Button variant={"outline"} className="w-40 mx-10">Airbnb</Button>
       </main>
     </Fragment>
   );
