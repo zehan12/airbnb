@@ -74,3 +74,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.first-box-shadow:hover {
+  -webkit-box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
+  -moz-box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
+  box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
+}
+
+.last-box-shadow:hover {
+  -webkit-box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
+  -moz-box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
+  box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
+}
