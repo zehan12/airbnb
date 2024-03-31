@@ -76,13 +76,25 @@
 }
 
 .first-box-shadow:hover {
-  -webkit-box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
-  -moz-box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
-  box-shadow: -23px 0px 0px 0px rgb(245, 241, 245);
+  -webkit-box-shadow: -20px 0px 0px 0px rgb(245, 241, 245);
+  -moz-box-shadow: -20px 0px 0px 0px rgb(245, 241, 245);
+  box-shadow: -20px 0px 0px 0px rgb(245, 241, 245);
 }
 
 .last-box-shadow:hover {
-  -webkit-box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
-  -moz-box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
-  box-shadow: 77px 0px 0px 0px rgb(245, 241, 245);
+  -webkit-box-shadow: 76px 0px 0px 0px rgb(245, 241, 245);
+  -moz-box-shadow: 76px 0px 0px 0px rgb(245, 241, 245);
+  box-shadow: 76px 0px 0px 0px rgb(245, 241, 245);
+}
+
+.selected-first-box-shadow {
+  -webkit-box-shadow: -20px 0px 0px 0px white;
+  -moz-box-shadow: -20px 0px 0px 0px white;
+  box-shadow: -20px 0px 0px 0px white;
+}
+
+.selected-last-box-shadow {
+  -webkit-box-shadow: 76px 0px 0px 0px white;
+  -moz-box-shadow: 76px 0px 0px 0px white;
+  box-shadow: 76px 0px 0px 0px white;
 }

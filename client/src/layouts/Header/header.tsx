@@ -9,6 +9,7 @@ import useHover from "@/hooks/use-hover";
 
 const Header = () => {
   const [isSearchExpanded, setSearchExpanded] = useState(false);
+  const [option, setOption] = useState("");
   const [hoverRef, isHovering] = useHover();
 
   const navigation = [
@@ -79,11 +80,9 @@ const Header = () => {
               <div
                 ref={hoverRef}
                 className={cn(
-                  "flex w-full justify-evenly items-center shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full transition-width ml-60",
-                  {
-                    "w-5/12 h-12": isSearchExpanded,
-                    "w-8/12": !isSearchExpanded,
-                  }
+                  "flex w-full justify-evenly items-center border-[1px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-full transition-width ml-60",
+                  isSearchExpanded ? "w-5/12 h-12" : "w-8/12",
+                  option.length ? "bg-[#EBEBEB] shadow-inner" : "",
                 )}
               >
                 {isSearchExpanded
@@ -98,30 +97,37 @@ const Header = () => {
                   : navigation1.map((item, index) => (
                       <div
                         key={item.name}
+                        onClick={() => setOption(item.name)}
                         className={cn(
                           "flex flex-col justify-start px-7 py-3 items-center text-sm font-sans h-16 hover:bg-gray-100 rounded-full cursor-pointer",
                           index === 0 && "first-box-shadow",
-                          index === navigation1.length - 1 && "last-box-shadow"
+                          index === navigation1.length - 1 && "last-box-shadow",
+                          option === item.name
+                          ? index === 0
+                            ? "selected-first-box-shadow bg-white"
+                            : index === navigation1.length - 1
+                              ? "selected-last-box-shadow bg-white"
+                              : "bg-white"
+                          : ""
                         )}
                       >
                         <h3 className="w-full font-medium">{item.name}</h3>
                         <p className="text-gray-400">{item.options}</p>
-                        {index !== navigation1.length - 1 && !isHovering && (
-                          <Separator
-                            className="absolute h-7 top-[109px]"
-                            style={{ left: `${450 + (index + 1) * 150}px` }} // Adjusted logic here
-                            orientation="vertical"
-                          />
-                        )}
+                        {index !== navigation1.length - 1 &&
+                          !isHovering &&
+                          !option.length && (
+                            <Separator
+                              className="absolute h-7 top-[109px]"
+                              style={{ left: `${450 + (index + 1) * 150}px` }}
+                              orientation="vertical"
+                            />
+                          )}
                       </div>
                     ))}
                 <Search
                   className={cn(
                     "p-2 -mr-2.5 bg-red-500 text-white rounded-full",
-                    {
-                      "w-9 h-9 -mr-6": isSearchExpanded,
-                      "w-12 h-12 p-3 -mr-3": !isSearchExpanded,
-                    }
+                    isSearchExpanded ? "w-9 h-9 -mr-6" : "w-12 h-12 p-3 -mr-3"
                   )}
                 />
               </div>
